@@ -1,22 +1,36 @@
+ # importing whole module
 from tkinter import *
-from tkinter.tk import *
+from tkinter.ttk import *
 
+# importing strftime function to
+# retrieve system's time
 from time import strftime
 
-
+# creating tkinter window
 root = Tk()
-root.title('CSE A B Clock')
+root.title('Clock')
+
+# This function is used to
+# display time on the label
 
 def time():
-    string = strftime(‘%A %d %B , %I:%M:%S %p')
+    string = strftime('%A %d %B , %I:%M:%S %p')
     lbl.config(text=string)
     lbl.after(1000, time)
 
-lbl = Label(root, font=('aRIAL’, 40, 'bold'),
+
+# Styling the label widget so that clock
+# will look more attractive
+lbl = Label(root, font=('calibri', 40, 'bold'),
             background='purple',
             foreground='white')
 
+# Placing clock at the centre
+# of the tkinter window
 lbl.pack(anchor='center')
 time()
 
 mainloop()
+
+
+
